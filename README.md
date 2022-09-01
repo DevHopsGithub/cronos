@@ -3,7 +3,7 @@ Cronos is a small collection of functions to handle unix time and datetime in da
 
 ## Installing
 
-1. Add dependencies to `pubspec.yaml`
+1.  Add dependencies to `pubspec.yaml`
 
     ```yaml
     dependencies:
@@ -12,13 +12,13 @@ Cronos is a small collection of functions to handle unix time and datetime in da
                 url: https://github.com/DevHopsGithub/cronos
     ```
 
-2. Run pub get.
+2.  Run pub get.
 
-   ```shell
-   flutter pub get
-   ```
+    ```shell
+    flutter pub get
+    ```
 
-3. Import package.
+3.  Import package.
 
     ```dart
     import 'package:cronos/cronos.dart';
