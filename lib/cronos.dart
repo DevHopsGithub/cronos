@@ -34,13 +34,11 @@ class Cronos {
 
   static DateTime timeStampToDateTime(int timestamp) =>
       DateTime.fromMillisecondsSinceEpoch(timestamp * 1000);
-  // ignore: non_constant_identifier_names
 
+  // ignore: non_constant_identifier_names
   static int StringDateToInt(String data) {
-    // padrão dia/mes/ano
     List<String> dataSplit = data.split('/');
-    return DateTime.parse(
-                dataSplit[2] + '-' + dataSplit[1] + '-' + dataSplit[0])
+    return DateTime.parse('${dataSplit[2]}-${dataSplit[1]}-${dataSplit[0]}')
             .millisecondsSinceEpoch ~/
         1000;
   }
@@ -48,25 +46,20 @@ class Cronos {
   static formatTimeStamp(int timestamp) {
     List<String> data =
         timeStampToDateTime(timestamp).toString().split(" ")[0].split("-");
-    return data[2] + '/' + data[1] + '/' + data[0];
+    return '${data[2]}/${data[1]}/${data[0]}';
   }
 
   static formatTimeStampUnderLine(int timestamp) {
     List<String> data =
         timeStampToDateTime(timestamp).toString().split(" ")[0].split("-");
-    return data[2] + '_' + data[1] + '_' + data[0];
+    return '${data[2]} ${data[1]} ${data[0]}';
   }
 
+  // ignore: non_constant_identifier_names
   static timeStampToString_date_and_hour(int timestamp) {
     List<String> data =
         timeStampToDateTime(timestamp).toString().split(" ")[0].split("-");
-    return data[2] +
-        '/' +
-        data[1] +
-        '/' +
-        data[0] +
-        ' - ' +
-        timeStampToStringHour(timestamp);
+    return '${data[2]}/${data[1]}/${data[0]} - ${timeStampToStringHour(timestamp)}';
   }
 
   static hourToDateTime(DateTime dateTime, TimeOfDay time) {
@@ -80,9 +73,7 @@ class Cronos {
 
   static timeStampToStringHour(int timestamp) {
     final DateTime dateTime = Cronos.timeStampToDateTime(timestamp);
-    return dateTime.hour.toString().padLeft(2, '0') +
-        ':' +
-        dateTime.minute.toString().padLeft(2, '0');
+    return '${dateTime.hour.toString().padLeft(2, '0')}:${dateTime.minute.toString().padLeft(2, '0')}';
   }
 
   static int dateTimeToAge(DateTime dateTime) {
